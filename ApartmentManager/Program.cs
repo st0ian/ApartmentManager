@@ -47,11 +47,15 @@ namespace ApartmentManager
         public static int selectOption()
         {
 
-            Scanner scanner = new Scanner(System.in);
+            /*Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
             visualFormatting('^');
             System.out.println("SUCCESS: You selected Option " + option);
+            visualFormatting('^');*/
+            int option = int.Parse(Console.ReadLine());
             visualFormatting('^');
+            Console.WriteLine("SUCCESS: You selected Option " + option);
+            visualFormatting('^'); 
 
             return option;
         }
@@ -61,22 +65,22 @@ namespace ApartmentManager
             switch (selected)
             {
                 case 1:
-                    Resident.addResident();
-                    System.out.println("New resident successfully added");
-                    System.out.println("You should Press [0] if you want to return to Main menu");
+                    //Resident.addResident();
+                    Console.WriteLine("New resident successfully added");
+                    Console.WriteLine("You should Press [0] if you want to return to Main menu");
                     backToMain();
                     break;
                 case 2:
-                    if (Block.getTotalResidents() > 0)
+                    /*if (Block.getTotalResidents() > 0)
                     {
                         Resident.removeResident();
-                        System.out.println("One resident was removed from the Block");
-                    }
+                        Console.WriteLine("One resident was removed from the Block");
+                    }*/
                     else
                     {
-                        System.out.println("Currently there are no residents in the Block");
+                        Console.WriteLine("Currently there are no residents in the Block");
                     }
-                    System.out.println("You should Press [0] if you want to return to Main menu");
+                    Console.WriteLine("You should Press [0] if you want to return to Main menu");
                     backToMain();
                     break;
                 case 3:
@@ -86,7 +90,7 @@ namespace ApartmentManager
                 case 5:
                     break;
                 case 6:
-                    System.out.println("Number ot total residents is " + Resident.getTotalResidents());
+                    Console.WriteLine("Number ot total residents is " + "Resident.getTotalResidents()");
                     showResidentsMenu();
                     backToMain();
                     break;
@@ -101,24 +105,22 @@ namespace ApartmentManager
 
             for (int i = 0; i < dashes; i++)
             {
-                System.out.print(visualForm);
+                Console.Write(visualForm);
                 if (i == dashes - 1)
                 {
-                    System.out.println();
+                    Console.WriteLine();
                 }
             }
         }
 
         public static void backToMain()
         {
-
-            Scanner scanner1 = new Scanner(System.in);
-            int choice = scanner1.nextInt();
+            int choice = int.Parse (Console.ReadLine());
 
             while (choice != 0)
             {
-                System.out.println("You should Press [0] if you want to return to Main menu");
-                choice = scanner1.nextInt();
+                Console.WriteLine("You should Press [0] if you want to return to Main menu");
+                choice = int.Parse(Console.ReadLine());
             }
         }
 
@@ -134,4 +136,4 @@ namespace ApartmentManager
          */
     }
 }
-}
+
